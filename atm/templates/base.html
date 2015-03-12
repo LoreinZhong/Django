@@ -1,0 +1,48 @@
+<html>
+<head>
+<style>
+
+	body{
+		background-color:#CCCCCC;
+	}
+	.left{
+		width:200px;
+		height:600px;
+		background-color:#CCFFCC;
+		float:left;
+	}
+	li{
+		list-style-type:none;
+	}
+	.left input{
+		width:150px;
+		height:90px;
+		background-color:#CCFFCC;
+		font-size:large;
+		border:0px;
+	}	
+	.right{
+		float:left;
+		background-color:#99CCCC;
+		color:white;
+		font-size:large;
+		height:600px;
+		width:1010px;
+	}
+</style>
+</head>
+<body>
+	<div class='left'>
+	<ul>
+		<form action='/transfer/' method = "get"><li><input type='submit' name='transfer' value='转账'></li></form>
+		<form action='/save/' method = "get"><li><input type='submit' name='save' value='存款'></li></form>
+		<form action='/query/' method = "get"><li><input type='submit' name='query' value='余额'></li></form>
+		<form action='/draw/' method = "get"><li><input type='submit' name='draw' value='取款'></li></form>
+		<form action='/exit/' method = "get"><li><input type='submit' name='exit' value='退卡'></li></form>
+	</ul>
+	</div>
+	<div class='right'>
+	{%block content %}{% endblock%}
+	</div>
+</body>
+</html>

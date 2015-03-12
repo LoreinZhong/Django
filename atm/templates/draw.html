@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{%block content %}
+<style>
+	.drawdiv{
+	positive:absolute;
+	margin-top:230px;
+	margin-left:380px;
+	width:300px;
+	}
+	.drawdiv input{
+	float:right;
+	}
+</style>
+
+<div class='drawdiv'>
+<form action='/draw/' method='get'>
+	<label>取出金额</label>
+	<input type='text' name='drawMoney'>
+	<input type='submit' value='确定'>
+</form>
+{%if errors %}
+<ul>
+	{% for error in errors %}
+		<li style="color:red;font-size:small;">{{error}}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endblock%}

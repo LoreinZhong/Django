@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang = "en">
+	<head>
+		<title>Login Page</title>
+		<meta http-equiv="Content-Type">
+		<style>
+			body{
+				background-color:#999999;
+			}
+			.login{
+				overflow:hidden;
+				width:300px;
+				float:center;
+				position:absolute;
+				margin-top:230px;
+				margin-left:420px;
+			}
+			.login .login-item{
+				padding:10px 0;
+				overflow:hidden;
+				clear:both;
+				line-height:25px;
+				padding:0px;
+			}
+			.login .login-item label{
+				float:left;
+				text-align:left;
+				width:80px;
+			}
+			.login .login-item input{
+				float:right;
+			}
+			.login .login-tools{
+				text-align:center;
+				float:center;
+			}
+		</style>
+	</head>
+	<body>
+	
+	{%if errors %}
+	<ul>
+		{% for error in errors %}
+			<li style="color:red;">{{error}}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	
+	<form action="/login/" method="get">
+	<div class = "login">
+		<div class = "login-item">
+			<label>Id</label>
+			<input type="text" name="name">
+		</div>
+		<div class = "login-item">
+			<label>Password</label>
+			<input type="password" name="password">
+		</div>
+		<div class="login-tools">
+			<input type = 'submit' value = "login">
+		</div>
+	</div>
+	</form>
+	</body>
+</html>

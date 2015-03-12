@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+{%block content %}
+<style>
+	.savediv{
+	positive:absolute;
+	margin-top:230px;
+	margin-left:380px;
+	width:300px;
+	}
+	.savediv .sure{
+	float:center;
+	}
+	.savediv input{
+	float:right;
+	}
+</style>
+
+
+<div class = "savediv">
+<form action='/save/' method="get">
+	<label>存入金额</label>
+	<input background-color='white' type='text' name='saveMoney'/>
+	<input type='submit' value='确定'>
+</form>
+{%if errors %}
+<ul>
+	{% for error in errors %}
+		<li style="color:red;font-size:small;">{{error}}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+</div>
+
+{% endblock%}

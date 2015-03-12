@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{%block content %}
+<style>
+	.transferdiv{
+	positive:fixed;
+	margin-top:230px;
+	margin-left:380px;
+	width:300px;
+	}
+	.transferdiv .sure{
+	float:center;
+	}
+	.transferdiv input{
+	float:right;
+	}
+</style>
+
+<div class='transferdiv'>
+<form action='/transfer/' method="get">
+	<div>
+		<label>转账金额</label><input background-color='white' type='text' name='addMoney'>
+	</div>
+	<div>
+		<label>转入账户</label><input type='text' name='toId'>
+	</div>
+	<div class='sure'><input type='submit' value='确定'></div>
+</form>
+{%if errors %}
+<ul>
+	{% for error in errors %}
+		<li style="color:red;font-size:small;">{{error}}</li>
+	{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endblock%}

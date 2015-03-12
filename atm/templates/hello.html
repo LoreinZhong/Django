@@ -1,0 +1,6 @@
+	{% extends 'base.html' %}	
+		{% block content %}
+		{% if customer %}
+			<div style='positive:fixed;margin-top:230px;margin-left:380px;'>hi,{{ customer.name }}</div>
+		{% endif %}	
+		{% endblock %}
